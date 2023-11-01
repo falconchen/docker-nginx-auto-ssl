@@ -1,0 +1,27 @@
+stream {
+
+    upstream litespeed{
+        server litespeed:443;
+    }
+
+    upstream www{
+        server 127.0.0.1:443;
+    }
+
+
+    map $ssl_preread_server_name $ssl_server {
+	litespeed1.example.com litespeed;
+	litespeed2.example.com litespeed;
+	default www;
+    }
+
+    # SSH and SSL on the same port
+    server {
+        listen 443;
+        ssl_preread on;
+        proxy_pass $ssl_server;
+	proxy_connect_timeout 5s;
+	#proxy_protocol on;
+	#proxy_set_header X-Real-IP $remote_addr;
+   }
+}

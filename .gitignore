@@ -1,0 +1,2 @@
+ssl_preread_servername.conf
+/web/docker-nginx-auto-ssl/conf.d/*.conf
