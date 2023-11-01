@@ -5,7 +5,7 @@ stream {
     }
 
     upstream www{
-        server 127.0.0.1:443;
+        server nginx:443;
     }
 
 
