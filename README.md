@@ -1,12 +1,13 @@
 # docker-nginx-auto-ssl
 
-docker-compose.yml 使用方式
+
+git submodule add git@github.com:falconchen/docker-nginx-auto-ssl.git
+向 docker-compose.yml 添加服务
 
 ``` yml
 version: '3'
 services:
- 
-    
+
   nginx-auto-ssl:    
     build: docker-nginx-auto-ssl
     ports:
