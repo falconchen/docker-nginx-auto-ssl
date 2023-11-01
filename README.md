@@ -1,0 +1,2 @@
+# docker-nginx-auto-ssl
+
